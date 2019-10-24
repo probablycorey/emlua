@@ -1,0 +1,4 @@
+*.o
+*.a
+lua-5.3.5/src/lua
+lua-5.3.5/src/luac
