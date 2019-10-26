@@ -3,10 +3,10 @@
 #include <lauxlib.h>
 #include <lualib.h>
 
-int main(const char* script) {
+int main(int x) {
 	lua_State* lua = luaL_newstate();
 	luaL_openlibs(lua);
-
+	const char* script = "HELLO"
 	int res = luaL_dostring(lua, script);
 
 	size_t len = 0;
