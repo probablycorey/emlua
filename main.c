@@ -3,7 +3,7 @@
 #include <lauxlib.h>
 #include <lualib.h>
 
-int main(int x) {
+int main(int argc, char *argv[]) {
 	lua_State* lua = luaL_newstate();
 	luaL_openlibs(lua);
 	const char* script = "HELLO";
