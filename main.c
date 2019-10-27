@@ -3,6 +3,11 @@
 #include <lauxlib.h>
 #include <lualib.h>
 
+int hi() {
+	printf("hi corey\n");
+	return 0;
+}
+
 int lua_main(const char* script) {
 	lua_State* lua = luaL_newstate();
 	luaL_openlibs(lua);
