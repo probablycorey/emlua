@@ -4,7 +4,7 @@
 #include <lualib.h>
 
 int lua_main(const char* script) {
-	script = "return 3"
+	script = "return 3";
 	lua_State* lua = luaL_newstate();
 	luaL_openlibs(lua);
 	int res = luaL_dostring(lua, script);
