@@ -2,7 +2,9 @@
   <body>
     <script src="main.js"></script>
     <script>
-      console.log(Module._lua_main("hi"));
+      Module.onRuntimeInitialized = function() {
+        console.log(Module._lua_main());
+      };
     </script>
   </body>
 </html>
