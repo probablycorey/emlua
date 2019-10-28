@@ -1,6 +1,9 @@
 #include <stdio.h>
 
-int lua_main(char* script) {
+int hi(char* script) {
 	printf("🤢 %s\n", script);
-	return 1;
+	printf("🤢 %s\n", "a string literal");
+	char *x = "a string variable";
+	printf("🤢 %s\n", x);
+	return 14;
 }
