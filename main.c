@@ -9,15 +9,15 @@ int hi() {
 }
 
 int lua_main(const char* script) {
-	printf("A1")
+	printf("A1");
 	lua_State* lua = luaL_newstate();
-	printf("B")
+	printf("B");
 	luaL_openlibs(lua);
-	printf("C")
+	printf("C");
 	int res = luaL_dostring(lua, script);
-	printf("D")
+	printf("D");
 	size_t len = 0;
-	printf("E")
+	printf("E");
 	const char* value = lua_tolstring(lua, lua_gettop(lua), &len);
 
 	printf("%s\n", value);
