@@ -3,11 +3,6 @@
 #include <lauxlib.h>
 #include <lualib.h>
 
-int hi() {
-	printf("hi corey1\n");
-	return 0;
-}
-
 int lua_main(const char* script) {
 	lua_State* lua = luaL_newstate();
 	luaL_openlibs(lua);
@@ -15,9 +10,17 @@ int lua_main(const char* script) {
 	size_t len = 0;
 	const char* value = lua_tolstring(lua, lua_gettop(lua), &len);
 
-	printf("%s %d\n", value, res);
+	if (res == 0) {
+		printf("🚀 %s\n", value);
+	} else {
+		printf("🛑 %s\n", value);
+	}
 
 	lua_close(lua);
 
-	return 0;
+	return res;
+}
+
+int main(int argc, char *argv[]) {
+	return lua_main("return x()");
 }
