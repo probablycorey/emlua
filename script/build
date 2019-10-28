@@ -7,3 +7,5 @@ set -e
 git ci -am'🌭' && git push
 gcloud beta compute --project "moneybot-249821" ssh --zone "us-central1-a" "emscripten-two" --command "source /home/corey/emsdk/emsdk_env.sh --build=Release && cd emlua && git pull && make"
 gcloud beta compute --project "moneybot-249821" scp --zone "us-central1-a" emscripten-two:/home/corey/emlua/build/main.{wasm,js} .
+
+say "done building"
