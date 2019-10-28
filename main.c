@@ -11,7 +11,7 @@ int lua_main(const char* script) {
 	const char* value = lua_tolstring(lua, lua_gettop(lua), &len);
 
 	if (res == 0) {
-		printf("🚀 %s\n", value);
+		printf("🚀 %s %s\n", value, script);
 	} else {
 		printf("🛑 %s\n", value);
 	}
@@ -22,5 +22,5 @@ int lua_main(const char* script) {
 }
 
 int main(int argc, char *argv[]) {
-	return lua_main("return x()");
+	return lua_main("return 4");
 }
