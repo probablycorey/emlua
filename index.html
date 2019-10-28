@@ -1,9 +1,21 @@
 <html>
   <body>
-    <script src="main.js"></script>
     <script>
+      function loadWasm(fileName) {
+        return fetch(fileName)
+          .then(response => response.arrayBuffer())
+          .then(bits => WebAssembly.compile(bits))
+          .then(module => {
+            return new WebAssembly.Instance(module);
+          });
+      }
+
+      loadWasm("main.wasm").then(instance => {
+        console.log(instance);
+      });
+
       Module.onRuntimeInitialized = function() {
-        console.log(Module._lua_main("return 3", "return 4"));
+        console.log("onruntimeinitialized");
       };
     </script>
   </body>
