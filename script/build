@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -e
+
+# add the key to prevent password prompts `ssh-add /Users/corey/Dropbox/dotfiles/.ssh/google_compute_engine`
+
+git ci -am'🌭' && git push
+gcloud beta compute --project "moneybot-249821" ssh --zone "us-central1-a" "emscripten-two" --command "cd emlua && git pull && make"
+gcloud beta compute --project "moneybot-249821" scp --zone "us-central1-a" emscripten-two:/home/corey/emlua/build/main.{wasm,js} .
