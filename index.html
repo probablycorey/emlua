@@ -3,7 +3,7 @@
     <script src="main.js"></script>
     <script>
       Module.onRuntimeInitialized = function() {
-        Module.ccall("hi", "number", ["string"], ["oello"]);
+        Module.ccall("lua_main", "number", ["string"], ["return 93"]);
       };
     </script>
   </body>
